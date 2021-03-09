@@ -200,6 +200,7 @@ async def addchannel(ctx,amount = 1,Cname = "BlankChannel",channelcategory = "")
 
 
 @client.command()
+#A fun function that gives you a list of taxes in Turkey
 async def vergiler(ctx):
     if(ctx.message.author.guild_permissions.admin):
         verg = open("vergiler.txt","r",encoding = "utf8")
@@ -212,23 +213,28 @@ async def vergiler(ctx):
         ctx.send("Ab admin yetkin yko :flushed: ")
 
 @client.command()
+#Homeworks command you can change the name by changing the function name
 async def odevler(ctx):
-    odevdosya = open("odevler.txt","r")
+    odevdosya = open("odevler.txt","r",encoding = "utf8"    )
     await ctx.send("```"+odevdosya.read()+"```")
     odevdosya.close()
 @client.command()
+#Add homework command
 async def odevekle(ctx,yeniodev):
-    odevdosya = open("odevler.txt","a")
+    odevdosya = open("odevler.txt","a",encoding = "utf8")
     odevdosya.write("\n"+yeniodev)
     odevdosya.close()
 @client.command()
+#Clear homework command
 async def odevtemizle(ctx):
-    odevdosya = open("odevler.txt","w")
+    odevdosya = open("odevler.txt","w",encoding = "utf8")
     odevdosya.close()
 @client.command()
+#Alternative help command
 async def omerhelp(ctx):
     await ctx.send(h)
 @client.command()
+#syllabus
 async def dersprogrami(ctx):
     await ctx.send(dersler)
 
